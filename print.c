@@ -16,13 +16,13 @@ void err_cmd_not_found(char *program_name, char *command, int loop)
 	char *separator = ": ";
 	char *loop_count = int_to_str(loop);
 
-	write(STDOUT_FILENO, program_name, _strlen(program_name));
-	write(STDOUT_FILENO, separator, _strlen(separator));
-	write(STDOUT_FILENO, loop_count, _strlen(loop_count));
-	write(STDOUT_FILENO, separator, _strlen(separator));
-	write(STDOUT_FILENO, command, _strlen(command));
-	write(STDOUT_FILENO, separator, _strlen(separator));
-	write(STDOUT_FILENO, not_found, _strlen(not_found));
+	write(STDERR_FILENO, program_name, _strlen(program_name));
+	write(STDERR_FILENO, separator, _strlen(separator));
+	write(STDERR_FILENO, loop_count, _strlen(loop_count));
+	write(STDERR_FILENO, separator, _strlen(separator));
+	write(STDERR_FILENO, command, _strlen(command));
+	write(STDERR_FILENO, separator, _strlen(separator));
+	write(STDERR_FILENO, not_found, _strlen(not_found));
 
 	free(loop_count);
 }
