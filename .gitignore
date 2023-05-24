@@ -1,4 +1,4 @@
-/tests1
-/tests2
-/tests5
+tests1/
+tests2/
+tests5/
 *.o
